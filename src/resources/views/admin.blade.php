@@ -75,15 +75,42 @@
                             <div id="modal-{{ $contact->id }}" class="modal">
                                 <div class="modal-content">
                                     <span class="close" onclick="closeModal({{ $contact->id }})">&times;</span>
-                                    <p>名前：{{ $contact->last_name }} {{ $contact->first_name }}</p>
-                                    <p>性別：{{ ['1' => '男性', '2' => '女性', '3' => 'その他'][$contact->gender] }}</p>
-                                    <p>メール：{{ $contact->email }}</p>
-                                    <p>電話番号：{{ $contact->tel }}</p>
-                                    <p>住所：{{ $contact->address }}</p>
-                                    <p>住所：{{ $contact->building }}</p>
-                                    <p>住所：{{ ['1' => '商品のお届けについて', '2' => '商品の交換について', '3' => '商品トラブル', '4' => 'ショップへのお問い合わせ', '5' => 'その他'][$contact['category_id']] }}</p>
-                                    <p>内容：{{ $contact->detail }}</p>
-                                    <form class="search-form" action="/delete/{{ $contact->id }}" method="post">
+<div class="modal-row">
+    <label>お名前</label>
+    <div class="value">{{ $contact->last_name }} {{ $contact->first_name }}</div>
+</div>
+
+<div class="modal-row">
+    <label>性別</label>
+    <div class="value">{{ ['1' => '男性', '2' => '女性', '3' => 'その他'][$contact->gender] }}</div>
+</div>
+
+<div class="modal-row">
+    <label>メール</label>
+    <div class="value">{{ $contact->email }}</div>
+</div>
+
+<div class="modal-row">
+    <label>電話番号</label>
+    <div class="value">{{ $contact->tel }}</div>
+</div>
+
+<div class="modal-row">
+    <label>住所</label>
+    <div class="value">{{ $contact->address }}</div>
+</div>
+
+<div class="modal-row">
+    <label>建物名</label>
+    <div class="value">{{ $contact->building }}</div>
+</div>
+
+<div class="modal-row">
+    <label>お問い合わせの種類</label>
+    <div class="value">
+        {{ ['1'=>'商品のお届けについて','2'=>'商品の交換について','3'=>'商品トラブル','4'=>'ショップへのお問い合わせ','5'=>'その他'][$contact->category_id] }}
+    </div>
+</div>
                                     @csrf
                                     @method('DELETE')
                                         <button type="submit" class="delete-button">削除</button>

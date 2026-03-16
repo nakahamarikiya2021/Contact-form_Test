@@ -10,14 +10,12 @@ class AdminController extends Controller
 {
     public function index()
     {
-        //dbに登録する処理
         $contacts = Contact::all();
-        $contacts = Contact::Paginate(4);
+        $contacts = Contact::Paginate(7);
         return view('admin', compact('contacts'));
     }
     public function destroy($id)
     {
-        //dbに登録する処理
         Contact::findOrFail($id)->delete();
         $contacts = Contact::all();
         return redirect('/admin')->with('message', '削除しました');
@@ -25,13 +23,12 @@ class AdminController extends Controller
 
     public function search(Request $request)
     {
-        //dbに登録する処理
         $contacts = Contact::with('category')
             ->CategorySearch($request->category)
             ->GenderSearch($request->gender)
             ->KeywordSearch($request->keyword)
             ->DateSearch($request->date)
-            ->paginate(3);
+            ->paginate(7);
         return view('admin', compact('contacts'));
     }
 

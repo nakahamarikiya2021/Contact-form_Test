@@ -16,19 +16,10 @@
 
 @section('content')
   <div class="form__title">
-  Register
+    Register
   </div>
-  <div class="form__content">
-    @if ($errors->any())
-      <div class="form__error">
-        <ul>
-          @foreach ($errors->all() as $error)
-            <li>{{ $error }}</li>
-          @endforeach
-        </ul>
-      </div>
-    @endif
 
+  <div class="form__content">
     <form class="create-form" action="/register" method="POST">
       @csrf
 
@@ -40,11 +31,9 @@
           <div class="form__input--text">
             <input type="text" name="name" value="{{ old('name') }}">
           </div>
-          <div class="form__error">
-            @error('name')
-              {{ $message }}
-            @enderror
-          </div>
+          @error('name')
+            <div class="form__error">{{ $message }}</div>
+          @enderror
         </div>
       </div>
 
@@ -56,11 +45,9 @@
           <div class="form__input--text">
             <input type="email" name="email" value="{{ old('email') }}">
           </div>
-          <div class="form__error">
-            @error('email')
-              {{ $message }}
-            @enderror
-          </div>
+          @error('email')
+            <div class="form__error">{{ $message }}</div>
+          @enderror
         </div>
       </div>
 
@@ -72,13 +59,12 @@
           <div class="form__input--text">
             <input type="password" name="password">
           </div>
-          <div class="form__error">
-            @error('password')
-              {{ $message }}
-            @enderror
-          </div>
+          @error('password')
+            <div class="form__error">{{ $message }}</div>
+          @enderror
         </div>
       </div>
+
       <div class="form__button">
         <button class="register__button" type="submit">登録</button>
       </div>

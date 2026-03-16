@@ -22,17 +22,22 @@
   <div class="form__content">
     <form class="create-form" action="/login" method="post">
       @csrf
+
       <div class="form__group">
         <div class="form__group-title">
           <span class="form__label--item">メールアドレス</span>
-          <input type="email" name="email" value="{{ old('email') }}" />
         </div>
-        <div class="form__error">
+        <div class="form__group-content">
+          <div class="form__input--text">
+            <input type="email" name="email" value="{{ old('email') }}">
+          </div>
           @error('email')
-            {{ $message }}
+            <div class="form__error">{{ $message }}</div>
           @enderror
         </div>
+      </div>
 
+      <div class="form__group">
         <div class="form__group-title">
           <span class="form__label--item">パスワード</span>
         </div>
@@ -40,8 +45,14 @@
           <div class="form__input--text">
             <input type="password" name="password">
           </div>
-          <button class="login__button" type="submit">ログイン</button>
+          @error('password')
+            <div class="form__error">{{ $message }}</div>
+          @enderror
         </div>
+      </div>
+
+      <div class="form__button">
+        <button class="login__button" type="submit">ログイン</button>
       </div>
     </form>
   </div>

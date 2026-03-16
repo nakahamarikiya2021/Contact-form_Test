@@ -85,13 +85,12 @@
     border: 1px solid #d9c6b5;
     text-decoration: none;
     color: #8b7969;
-    background: #e6e2de;
+    background: #e6dede;
 }
 
 svg.w-5.h-5 {
-      /*paginateメソッドの矢印の大きさ調整のために追加*/
-      width: 30px;
-      height: 30px;
+    width: 30px;
+    height: 30px;
   }
 
 .modal {
@@ -121,4 +120,27 @@ svg.w-5.h-5 {
     right: 15px;
     font-size: 24px;
     cursor: pointer;
+}
+
+.delete-button{
+    display: inline-block;
+    padding: 6px 12px;
+    border: 1px solid #d9c6b5;
+    text-decoration: none;
+    color: #ffffff;
+    background: #fa0303;
+    margin: 0px auto;
+}
+.modal-row{
+  display:flex;
+  margin-bottom:10px;
+}
+
+.modal-row label{
+  width:200px;
+  font-weight:bold;
+}
+
+.modal-row .value{
+  flex:1;
 }

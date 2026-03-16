@@ -3,24 +3,25 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\ContactRequest;
 use App\Models\Contact;
 use App\Models\Category;
 class FormController extends Controller
 {
     public function index()
-    {   
+    {
         $categories = Category::all();
         return view('index', compact('categories'));
     }
 
-    public function confirm(Request $request)
+    public function confirm(ContactRequest $request)
     {
         $contact = $request->all();
         return view('confirm', compact('contact'));
     }
 
-        public function store(Request $request)
-    {   
+    public function store(Request $request)
+    {
         //dbに登録する処理
         $contact = $request->all();
         // 電話番号を結合
@@ -33,5 +34,10 @@ class FormController extends Controller
     {
         return redirect('/')
             ->withInput($request->all());
+    }
+    public function verror(Request $request)
+    {
+        $contact = $request->all();
+        return view('confirm', compact('contact'));
     }
 }

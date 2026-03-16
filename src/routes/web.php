@@ -18,6 +18,7 @@ use App\Http\Controllers\AdminController;
 
 Route::get('/', [FormController::class,'index']);
 Route::post('/confirm', [FormController::class, 'confirm']);
+Route::get('/confirm', [FormController::class, 'confirm']);
 Route::post('/send', [FormController::class, 'store']);
 Route::get('/admin', [AdminController::class, 'index']);
 Route::delete('/delete/{id}', [AdminController::class, 'destroy']);

@@ -23,8 +23,11 @@ php artisan db:seed
 
 ## 使用技術
 php 8.1
+
 Laravel Framework 8.83.8
+
 mysql:8.0.26
+
 nginx:1.21.1
 
 ## ER図

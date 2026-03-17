@@ -4,14 +4,21 @@
 Dockerビルド
 
 git clone github.com/nakahamarikiya2021/Contact-form_Test
+
 docker-compose up -d build
 
 Laravel環境構築
+
 docker-compose exec php bash
+
 composer install
+
 cp .env.example .env
+
 php artisan key:generation
+
 php artisan migrate
+
 php artisan db:seed
 
 ## 使用技術

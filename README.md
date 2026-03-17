@@ -3,7 +3,7 @@
 ## 環境構築
 Dockerビルド
 
-git clone github.com/nakahamarikiya2021/Contact-form_Test
+git clone git@github.com:nakahamarikiya2021/Contact-form_Test.git
 
 docker-compose up -d build
 

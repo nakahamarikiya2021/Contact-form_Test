@@ -1,4 +1,4 @@
-# laravel-Contact-form-test
+# Contact-form-test
 
 ## 環境構築
 Dockerビルド

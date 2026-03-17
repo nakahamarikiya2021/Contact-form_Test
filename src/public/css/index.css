@@ -1,32 +1,51 @@
+.form__title {
+    margin-top: 40px;
+    text-align: center;
+    font-size: 28px;
+}
+
 .form__content {
     width: 1000px;
     margin: 20px auto;
-    background: white;
     padding: 20px;
+    background: #fff;
     font-size: 20px;
-}
-.form__title {
-    text-align: center;
-    font-size: 28px;
-    margin-top: 40px;
+    box-sizing: border-box;
 }
 
-.create-form div {
+.create-form>div {
     display: flex;
     align-items: center;
     margin-bottom: 20px;
 }
 
-.create-form label {
+.create-form>div>label:first-child {
     width: 200px;
     font-weight: bold;
 }
 
 .create-form input,
 .create-form select {
-    flex: 1;
     padding: 20px;
     border: 1px solid #ddd;
+    box-sizing: border-box;
+}
+
+.form__content__name input {
+    width: calc((100% - 230px) / 2);
+    margin-right: 30px;
+}
+
+.form__content__name input:last-child {
+    margin-right: 0;
+}
+
+.form__content__mail input,
+.form__content__address input,
+.form__content__building input,
+.form__content__contents input,
+.form__content__category select {
+    flex: 1;
 }
 
 .form__content__tel input {
@@ -34,16 +53,16 @@
     margin-right: 10px;
 }
 
+.form__content__tel input:last-child {
+    margin-right: 0;
+}
+
 .confirmation__button {
     display: block;
     margin: 30px auto;
     padding: 10px 40px;
-    background: #8b6b5c;
-    color: white;
     border: none;
-}
-
-.form__content__name input{
-    padding: 20px;
-    margin-right: 30px;
+    background: #8b6b5c;
+    color: #fff;
+    cursor: pointer;
 }

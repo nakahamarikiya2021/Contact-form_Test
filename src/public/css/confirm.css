@@ -1,50 +1,32 @@
-.form__title {
-    text-align: center;
-    font-size: 28px;
-    margin-top: 40px;
-    margin-bottom: 30px;
-}
-
 main {
     display: flex;
     justify-content: center;
 }
 
 .form__content {
-    width:100%;
-    height: 100%;
-    background: white;
-    padding: 40px;
-    border-radius: 5px;
-    margin: auto;
-}
-
-.confirmation-form input {
     width: 100%;
-    padding: 10px;
-    margin-bottom: 20px;
-    border: 1px solid #ddd;
+    margin: auto;
+    padding: 40px;
+    background: #fff;
+    box-sizing: border-box;
 }
 
-.confirm__button {
-    display: flex;
-    margin: 20px auto;
-    padding: 10px 40px;
-    background: #8b6b5c;
-    color: white;
-    border: none;
+.form__title {
+    margin: 40px 0 30px;
+    text-align: center;
+    font-size: 28px;
 }
 
 table {
     width: 800px;
-    border-collapse: collapse;
     margin: 0 auto;
+    border-collapse: collapse;
 }
 
 th {
     width: 200px;
-    text-align: left;
     padding: 15px;
+    text-align: left;
     background: #e0c4b8;
     border: 1px solid #ccc;
 }
@@ -54,18 +36,19 @@ td {
     border: 1px solid #ccc;
 }
 
-.fix__button {
-    display: flex;
-    margin: 20px auto;
-    padding: 10px 40px;
-    background: #8b6b5c;
-    color: white;
-    border: none;
-}
-
 .button__group {
     display: flex;
     justify-content: center;
     gap: 20px;
     margin-top: 30px;
+}
+
+.confirm__button,
+.fix__button {
+    display: inline-block;
+    padding: 10px 40px;
+    border: none;
+    background: #8b6b5c;
+    color: #fff;
+    cursor: pointer;
 }
